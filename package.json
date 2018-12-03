@@ -1,0 +1,16 @@
+{
+  "name": "hackernews-node",
+  "version": "1.0.0",
+  "description": "graphql tutorial",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Rosen",
+  "license": "ISC",
+  "dependencies": {
+    "graphql-yoga": "1.16.7",
+    "nodemon": "1.18.7"
+  }
+}
