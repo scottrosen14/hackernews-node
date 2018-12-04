@@ -16,16 +16,16 @@ const resolvers = {
         }
       }, info)
     },
-    updateLink: (root, args) => {
-      const updatedLinks = []
-      links.forEach((link) => {
-        if (link.id === args.id) {
-          link.description = args.description
-          link.url = args.url
-          updatedLinks.push(link);
+    updateLink: (root, args, context, info) => {
+      return context.db.mutation.updateLink({
+        data: {
+          url: args.url,
+          description: args.description
+        },
+        where: {
+          id: args.id
         }
-      })
-      return updatedLinks[0];
+      });
     },
     deleteLink: (root, args) => {
       const rejectedLinks = [];
